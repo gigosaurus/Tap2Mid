@@ -10,16 +10,16 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024 # 32 MB max
 app.secret_key = 'ttr2_track_upload_secret_key'
 
-@app.route('/ttr-track-convert')
+@app.route('/tap2mid')
 def main():
   return render_template('index.html')
 
-@app.route('/ttr-track-convert/upload', methods=['POST'])
+@app.route('/tap2mid/upload', methods=['POST'])
 def upload_file():
   # check if the post request has the file part
   if 'file' not in request.files:
     flash('No file part')
-    return redirect('/ttr-track-convert')
+    return redirect('/tap2mid')
   file = request.files['file']
   # if user does not select file, browser also
   # submit a empty part without filename
@@ -40,7 +40,7 @@ def upload_file():
       flash('Empty file')
   else:
     flash('Invalid file type')
-  return redirect('/ttr-track-convert')
+  return redirect('/tap2mid')
 
 
 def allowed_file(filename):
