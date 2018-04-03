@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tap2Mid</title>
+    <link rel="stylesheet" type="text/css" media="all" href="lib/css/index.css?25" />
+    <script src="lib/js/plist-parser.js"></script>
+    <script src="lib/js/midiCreator.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=0.35">
+  </head>
+  <body>
+    <div id="errors"></div>
+    <div id="loading" class="screen">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+    <div id="upload" class="screen">
+      <div class="title"><p>Tap2Mid</p></div>
+      <div id="filedrop">
+        <div id="fileprogress"></div>
+        <div id="text">Drop a .ttr2_track file here</div>
+        <input id="fileselect" type="file" />
+      </div>
+    </div>
+    <div id="yturl" class="screen hidden">
+      <div class="title">
+        <button id="btn-toUpload" class="nav-button">&lt; Back</button>
+      </div>
+      <input type="text" id="ytlink" placeholder="Enter YouTube URL" />
+    </div>
+    <div id="sync" class="screen hidden">
+      <div class="title">
+        <button id="btn-toYturl" class="nav-button">&lt; Back</button>
+        <div id="ytplayer"></div>
+        <button id="convert" class="nav-button flex-right">Convert &gt;</button>
+      </div>
+      <div class="controls">
+        <div class="control"><p>Approach Speed</p><input id="approach" type="number" step="0.1" value="1" /></div>
+        <div class="control"><p>Note Offset (seconds)</p><input id="offset" type="number" step="0.01" value="0" /></div>
+        <div class="control"><p>Playback Speed</p><input id="speed" type="number" step="0.5" value="1" min="0.5" max="1" /></div>
+      </div>
+      <div class="row"><canvas id="midvis" width="250" height="250"></canvas></div>
+    </div>
+  <script src="lib/js/index.js?10"></script>
+  </body>
+</html>
